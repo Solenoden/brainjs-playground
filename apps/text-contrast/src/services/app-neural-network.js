@@ -38,6 +38,11 @@ class AppNeuralNetwork {
     run(trainingDataInput) {
         return this.brainNeuralNetwork.run(trainingDataInput.compile());
     }
+
+    addNewTrainingData(trainingDataItem) {
+        this.trainingData.push(trainingDataItem);
+        this.train();
+    }
 }
 
 module.exports = { AppNeuralNetwork };

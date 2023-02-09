@@ -8,6 +8,17 @@ class Colour extends TrainingDataInput {
         this.blue = blue;
     }
 
+    static fromRgbString(rgbString) {
+        const strippedString = rgbString.replace(/[rgb()]/g, '');
+        const parts = strippedString.split(',');
+
+        const red = parts[0];
+        const green = parts[1];
+        const blue = parts[2];
+
+        return new Colour(red, green, blue);
+    }
+
     compile() {
         return [
             this.red === 0 ? 0 : this.red / 255,
