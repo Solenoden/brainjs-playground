@@ -10,28 +10,38 @@
         <div class="column">
             <h5>AI Tools:</h5>
             <div class="row">
-                <button id="btn-persist-training-data" class="mr-8px">Persist Training Data</button>
-                <button id="btn-clear-training-data">Clear Training Data</button>
+                <button id="btn-persist-training-data" class="mr-8px" style="background-color: rgb(16, 191, 16);">Persist Training Data</button>
+                <button id="btn-clear-training-data" style="background-color: rgb(255, 59, 59);">Clear Training Data</button>
             </div>
         </div>
 
         <hr>
 
         <div id="test-block" class="column">
-            <h3>Test Text String</h3>
+            <h3 class="dark-text">Dark Text</h3>
+            <h3 class="light-text">Light Text</h3>
         </div>
         <div class="column">
             <h5>The AI's guess:</h5>
-            <div id="ai-guess-block" class="column"><span>Test Text String</span></div>
+            <div id="ai-guess-block" class="column"><span>Loading Guess</span></div>
         </div>
 
         <hr>
 
-        <div class="column">
-            <h5>Correct Text Contrast:</h5>
-            <div class="row">
-                <button id="btn-dark" class="mr-8px">Dark</button>
-                <button id="btn-light">Light</button>
+        <div class="row justify-between">
+            <div class="column">
+                <h5>Correct Text Contrast:</h5>
+                <div class="row">
+                    <button id="btn-dark" class="mr-8px" style="background-color: rgb(120, 121, 122)">Dark</button>
+                    <button id="btn-light" style="background-color: rgb(197, 197, 197)">Light</button>
+                </div>
+            </div>
+            <div class="column">
+                <h5>AI Guess Stats</h5>
+                <span>Correct Guesses / Total Guesses (%)</span>
+                <span>Past Five Guesses: <span id="past-five-guesses"></span></span>
+                <span>Past Fifteen Guesses: <span id="past-fifteen-guesses"></span></span>
+                <span>Guesses since last clear: <span id="last-clear-guesses"></span></span>
             </div>
         </div>
     </div>
