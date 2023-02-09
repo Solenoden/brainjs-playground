@@ -34,10 +34,6 @@ html, body {
     text-align: center;
 }
 
-#btn-dark {
-    margin-right: 8px;
-}
-
 .column, .row {
     display: flex;
 }
@@ -46,8 +42,13 @@ html, body {
     flex-direction: column;
 }
 
+.mr-8px {
+    margin-right: 8px;
+}
+
 hr {
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 h3 {

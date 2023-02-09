@@ -7,7 +7,7 @@ const {Contrast} = require("./models/contrast.model");
 
 const app = express();
 
-const textContrastNeuralNetwork = new AppNeuralNetwork('');
+const textContrastNeuralNetwork = new AppNeuralNetwork('text-contrast');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -29,6 +29,16 @@ app.post("/ai/colour-contrast/train", function (request, response) {
         new Contrast(hasDarkContrast ? 1 : 0, hasLightContrast ? 1 : 0)
     ));
     response.send();
+});
+app.post("/ai/colour-contrast/training-data/persist", (request, response) => {
+    textContrastNeuralNetwork.persistTrainingData()
+        .then(() => response.send())
+        .catch(error => response.status(500).send(error));
+});
+app.post("/ai/colour-contrast/training-data/clear", (request, response) => {
+    textContrastNeuralNetwork.clearTrainingData()
+        .then(() => response.send())
+        .catch(error => response.status(500).send(error));
 });
 
 const port = process.env.PORT || 3000;

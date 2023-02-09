@@ -1,3 +1,5 @@
+apps/text-contrast/training-data/*.json
+
 # IDE
 .idea
 .vscode

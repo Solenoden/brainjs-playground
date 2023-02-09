@@ -8,15 +8,27 @@ class Colour extends TrainingDataInput {
         this.blue = blue;
     }
 
+    static fromJson(json) {
+        return new Colour(json.red, json.green, json.blue);
+    }
+
     static fromRgbString(rgbString) {
-        const strippedString = rgbString.replace(/[rgb()]/g, '');
+        const strippedString = rgbString.replace(/[rgb() ]/g, '');
         const parts = strippedString.split(',');
 
-        const red = parts[0];
-        const green = parts[1];
-        const blue = parts[2];
+        const red = Number(parts[0]);
+        const green = Number(parts[1]);
+        const blue = Number(parts[2]);
 
         return new Colour(red, green, blue);
+    }
+
+    toJson() {
+        return {
+            red: this.red,
+            green: this.green,
+            blue: this.blue
+        }
     }
 
     compile() {
